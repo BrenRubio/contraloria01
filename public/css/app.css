@@ -1,0 +1,258 @@
+      /* Tipo de letra */
+    @font-face {
+        font-family: 'Montserrat';
+        src: url('/fuentes/Montserrat/static/Montserrat-Black.ttf') format('truetype');
+        font-weight: 900;
+        font-style: normal;
+    }
+    
+    @font-face {
+        font-family: 'Montserrat';
+        src: url('/fuentes/Montserrat/static/Montserrat-BlackItalic.ttf') format('truetype');
+        font-weight: 900;
+        font-style: italic;
+    }
+    
+    /* Montserrat - Bold */
+    @font-face {
+        font-family: 'Montserrat';
+        src: url('/fuentes/Montserrat/static/Montserrat-Bold.ttf') format('truetype');
+        font-weight: 700;
+        font-style: normal;
+    }
+    
+    @font-face {
+        font-family: 'Montserrat';
+        src: url('/fuentes/Montserrat/static/Montserrat-BoldItalic.ttf') format('truetype');
+        font-weight: 700;
+        font-style: italic;
+    }
+    
+    /* Montserrat - ExtraBold */
+    @font-face {
+        font-family: 'Montserrat';
+        src: url('/fuentes/Montserrat/static/Montserrat-ExtraBold.ttf') format('truetype');
+        font-weight: 800;
+        font-style: normal;
+    }
+    
+    @font-face {
+        font-family: 'Montserrat';
+        src: url('/fuentes/Montserrat/static/Montserrat-ExtraBoldItalic.ttf') format('truetype');
+        font-weight: 800;
+        font-style: italic;
+    }
+    
+    /* Montserrat - ExtraLight */
+    @font-face {
+        font-family: 'Montserrat';
+        src: url('/fuentes/Montserrat/static/Montserrat-ExtraLight.ttf') format('truetype');
+        font-weight: 200;
+        font-style: normal;
+    }
+    
+    @font-face {
+        font-family: 'Montserrat';
+        src: url('/fuentes/Montserrat/static/Montserrat-ExtraLightItalic.ttf') format('truetype');
+        font-weight: 200;
+        font-style: italic;
+    }
+    
+    /* Montserrat - Italic (Regular) */
+    @font-face {
+        font-family: 'Montserrat';
+        src: url('/fuentes/Montserrat/static/Montserrat-Italic.ttf') format('truetype');
+        font-weight: 400;
+        font-style: italic;
+    }
+    
+    /* Montserrat - Light */
+    @font-face {
+        font-family: 'Montserrat';
+        src: url('/fuentes/Montserrat/static/Montserrat-Light.ttf') format('truetype');
+        font-weight: 300;
+        font-style: normal;
+    }
+    
+    @font-face {
+        font-family: 'Montserrat';
+        src: url('/fuentes/Montserrat/static/Montserrat-LightItalic.ttf') format('truetype');
+        font-weight: 300;
+        font-style: italic;
+    }
+    
+    /* Montserrat - Medium */
+    @font-face {
+        font-family: 'Montserrat';
+        src: url('/fuentes/Montserrat/static/Montserrat-Medium.ttf') format('truetype');
+        font-weight: 500;
+        font-style: normal;
+    }
+    
+    @font-face {
+        font-family: 'Montserrat';
+        src: url('/fuentes/Montserrat/static/Montserrat-MediumItalic.ttf') format('truetype');
+        font-weight: 500;
+        font-style: italic;
+    }
+    
+    /* Montserrat - Regular */
+    @font-face {
+        font-family: 'Montserrat';
+        src: url('/fuentes/Montserrat/static/Montserrat-Regular.ttf') format('truetype');
+        font-weight: 400;
+        font-style: normal;
+    }
+    
+    /* Montserrat - SemiBold */
+    @font-face {
+        font-family: 'Montserrat';
+        src: url('/fuentes/Montserrat/static/Montserrat-SemiBold.ttf') format('truetype');
+        font-weight: 600;
+        font-style: normal;
+    }
+    
+    @font-face {
+        font-family: 'Montserrat';
+        src: url('/fuentes/Montserrat/static/Montserrat-SemiBoldItalic.ttf') format('truetype');
+        font-weight: 600;
+        font-style: italic;
+    }
+    
+    /* Montserrat - Thin */
+    @font-face {
+        font-family: 'Montserrat';
+        src: url('/fuentes/Montserrat/static/Montserrat-Thin.ttf') format('truetype');
+        font-weight: 100;
+        font-style: normal;
+    }
+    
+    @font-face {
+        font-family: 'Montserrat';
+        src: url('/fuentes/Montserrat/static/Montserrat-ThinItalic.ttf') format('truetype');
+        font-weight: 100;
+        font-style: italic;
+    }
+    
+
+
+  /*   Variables  */
+
+  /* Define tus colores institucionañes */
+  :root {
+    --c1_primario: #691B31;
+    --c1_secundario: #DDC9A3;
+    --c1_terciario: #98989A;
+
+    --c2_primario: #A02142;
+    --c2_secundario: #BC955B;
+    --c2_terciario: #6F7271;
+
+    --c3_fondo: #FFFAFA;
+
+    /* Degradados con los colores */
+    --c_gradiente_primario: linear-gradient(45deg, var(--n1_primario), var(--n1_secundario));
+    --c_gradiente_secundario: linear-gradient(90deg, var(--n1_secundario), var(--n1_terciario));
+    --c_gradiente_terciario: linear-gradient(135deg, var(--n2_primario), var(--n2_secundario), var(--n2_terciario));
+}
+
+
+    
+            html,
+            body.principal {
+                height: 100%;
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+                font-family: 'Montserrat';
+                font-style: 'light';
+    
+    
+            }
+    
+            main {
+                flex-direction: column;
+                justify-content: center;
+            }
+    
+
+
+    
+            /* Estilos para los párrafos */
+            .texto {
+                font-family: 'Montserrat';
+                font-weight: 600;
+                font-size: 1rem;
+                line-height: 1.5;
+                margin-bottom: 1rem;
+                color: var(--c1_primario);
+            }
+    
+            .titulo{
+                font-family: 'Montserrat';
+                font-weight: 700;
+                font-size: calc(1.4rem + 0.6vw);
+                color: var(--c1_primario);
+            }
+    
+            .subtitulo {
+                font-family: sans-serif;
+                font-weight: 600;
+                font-size: calc(1.3rem + 0.6vw);
+                color: var(--c1_primario);
+            }
+
+            .parrafo {
+               font-family: 'Montserrat';
+                font-weight: 400;
+                font-size: 1rem;
+                line-height: 1.5;
+                margin-bottom: 1rem;
+                color: var(--c1_secundario);
+            }
+    
+            header,
+            footer {
+                height: 14%;
+                background-color:var(--c2_primario);
+                flex-shrink: 0;
+            }
+    
+            .menulateral{
+                background-color: var(--c1_primario);
+            }
+    
+            button#btnEnviar, a#btnEnviar {
+          background-color: var(--c2_secundario)
+            }
+    
+            button#btnCafe, a#btnCafe {
+          background-color: var(--c2_secundario)
+            }
+    
+    
+          /*   button#btnMenu, a#btnMenu {
+                background-color:var(--c2_primario);
+            } */
+            button#btnMenu:hover, a#btnMenu:hover {
+               /*  background-color: #9d24486d; */
+               background-color:var(--c2_secundario);
+            }
+            .bordetitulos {
+        border-bottom: 2px solid var(--c2_secundario); /* Grosor, estilo y color del borde inferior */
+    }
+    
+    #t_encabezado {
+        background-color: var(--c1_secundario) !important;
+        color: var(--c1_secundario)
+    }
+    
+    
+    
+    
+    
+          /*   @media (max-width: 992px) {
+                header {
+                    height: 20%;
+                }
+            } */
