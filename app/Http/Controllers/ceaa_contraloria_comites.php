@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\ComitesExport;
+use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Http\Request;
 use App\Models\Comites;
 use App\Models\Beneficiarios;
@@ -62,5 +64,10 @@ class ceaa_contraloria_Comites extends Controller
         $comite->delete();
 
         return redirect()->route('comites.index')->with('success', 'Integrante eliminado correctamente.');
+    }
+
+    public function export()
+    {
+        return Excel::download(new ComitesExport, 'comites.xlsx');
     }
 }

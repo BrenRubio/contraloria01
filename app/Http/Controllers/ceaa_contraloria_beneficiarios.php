@@ -107,4 +107,10 @@ class ceaa_contraloria_beneficiarios extends Controller
         $beneficiario = Beneficiarios::findOrFail($id);
         return view('ceaa_contraloria.beneficiarios', compact('beneficiario'));
     }
+
+    // Función para exportar el Excel
+    public function exportExcel()
+    {
+        return Excel::download(new BeneficiariosExport, 'Beneficiarios.xlsx');
+    }
 }

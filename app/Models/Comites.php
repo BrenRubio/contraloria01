@@ -28,9 +28,4 @@ class Comites extends Model
     {
         return $this->belongsTo(Beneficiarios::class, 'clave_comite', 'clave_comite');
     }
-
-    public function integrantes()
-    {
-        return $this->hasMany(Beneficiarios::class, 'clave_comite', 'clave_comite');
-    }
 }

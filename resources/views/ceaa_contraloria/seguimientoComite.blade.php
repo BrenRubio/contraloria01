@@ -18,6 +18,29 @@
         }
         .input-group { margin-bottom: 20px; }
         .documento { margin-left: 10px; font-size: 0.9em; color: #555; }
+        .btn {
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: #ffa500;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .btn:hover {
+            background-color: #ff8c00;
+        }
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 15px;
+            background-color: #ffa500;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .back-button:hover {
+            background-color: #ff8c00;
+        }
     </style>
 </head>
 <body>

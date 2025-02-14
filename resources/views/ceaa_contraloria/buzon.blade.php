@@ -76,18 +76,21 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="detalleQuejaModalLabel">Detalles de la Queja</h5>
+                    <h5 class="modal-title" id="detalleQuejaModalLabel">Queja / Sugerencia</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <p><strong>Asunto:</strong> <span id="modalAsunto"></span></p>
-                    <p><strong>Nombre del Reportante:</strong> <span id="modalNombreReportante"></span></p>
-                    <p><strong>Nombre del Reportado:</strong> <span id="modalNombreReportado"></span></p>
-                    <p><strong>Nombre del Comité:</strong> <span id="modalNombreComite"></span></p>  {{-- 🔥 Nueva línea --}}
-                    <p><strong>Clave del Comité:</strong> <span id="modalClaveComite"></span></p>   {{-- 🔥 Nueva línea --}}
-                    <p><strong>Motivo:</strong> <span id="modalMotivo"></span></p>
-                    <p><strong>Evidencia:</strong></p>
-                    <div id="modalEvidencia" class="d-flex flex-wrap"></div>
+                    <p><strong>Fecha</strong> <span id="modalFecha">21/01/25</span></p>
+                    <p><strong>Clave del comité</strong> <span id="modalClaveComite">TR09SD</span></p>
+                    <p><strong>Ubicación</strong> <span id="modalUbicacion">Ixmiquilpan, El Oro</span></p>
+                    <p><strong>Asunto</strong> <span id="modalAsunto">Obstrucción de obra</span></p>
+                    <p><strong>Motivo</strong> <span id="modalMotivo">El equipo para la culminación...</span></p>
+                    <p><strong>Nombre del reportado</strong> <span id="modalNombreReportado">Layron Layton</span></p>
+                    <p><strong>Nombre quien reporta</strong> <span id="modalNombreReportante">Luis Hernández</span></p>
+                    <p><strong>Evidencia</strong></p>
+                    <div class="evidencia" id="modalEvidencia">
+                        <img src="example-image.jpg" alt="Evidencia de queja">
+                    </div>
                 </div>
             </div>
         </div>

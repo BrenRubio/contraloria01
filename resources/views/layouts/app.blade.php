@@ -162,7 +162,7 @@
         <a href="{{ route('documentacion.index') }}"><i class="fas fa-info-circle"></i> Información de obra</a>
         <a href="{{ route('seguimiento-Obra') }}"><i class="fas fa-tasks"></i> Seguimiento de la CEAA</a>
         <a href="{{ route('segComite.index') }}"><i class="fas fa-user-check"></i> Seguimiento del comité</a>
-        <a href="{{ route('progreso-obra') }}"><i class="fas fa-chart-line"></i> Progreso de obra</a>
+        <a href="{{ route('progresoObra') }}"><i class="fas fa-chart-line"></i> Progreso de obra</a>
         <a href="{{ route('buzon-quejas.index') }}"><i class="fas fa-comment-dots"></i> Buzón de quejas y sugerencias</a>
         <div class="separator"></div>
         <a href="#cerrar-sesion"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a>

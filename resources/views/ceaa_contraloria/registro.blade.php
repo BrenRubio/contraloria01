@@ -111,8 +111,10 @@
                     <td>{{ $beneficiario->clave_comite }}</td>
                     <td>{{ $beneficiario->entidad_federativa_comite }}, {{ $beneficiario->municipio_comite }}, {{ $beneficiario->localidad_comite }}</td>
                     <td class="actions">
+                        <!--<a href="/CAASIM/48-rubros/actual/xlsx/a69_f02bCAASIM.xlsx" target="_blank" rel="noreferrer">XLSX?</a> -->
                         <button class="btn" data-toggle="modal" data-target="#modalComite{{ $beneficiario->clave_comite }}">Ver</button>
                         <a href="{{ route('beneficiarios.edit', $beneficiario->id) }}" class="btn">Editar</a>
+                        <a href="{{ route('export.comites') }}" class="btn btn-success" style="margin-bottom: 15px;">Exportar a Excel</a>
                         <form action="{{ route('beneficiarios.destroy', $beneficiario->id) }}" method="POST" style="display:inline;">
                             @csrf
                             @method('DELETE')

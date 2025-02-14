@@ -20,6 +20,8 @@ Route::resource('beneficiarios', ceaa_contraloria_beneficiarios::class);
 
 // Ruta para las operaciones de comités
 Route::resource('comites', ceaa_contraloria_Comites::class)->only(['index', 'store', 'destroy']);
+Route::get('/exportar-comites', [ceaa_contraloria_Comites::class, 'export'])->name('export.comites');
+
 
 // Rutas para las operaciones de documentación
 Route::resource('documentacion', ceaa_contraloria_documentacion::class)->only(['index', 'store', 'destroy']);
@@ -32,4 +34,4 @@ Route::resource('segComite', ceaa_contraloria_segComite::class)->except(['show']
 
 // Rutas adicionales desde el menú
 Route::view('/seguimiento-Obra', 'ceaa_contraloria.seguimientoObra')->name('seguimiento-Obra');
-Route::view('/seguimiento-obra', 'ceaa_contraloria.seguimientoObra')->name('progreso-obra');
+Route::view('/progresoObra', 'ceaa_contraloria.progresoObra')->name('progresoObra');
