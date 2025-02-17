@@ -5,24 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Seguimiento del Comité</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        .card { margin-top: 20px; }
-        .btn-custom { background-color: #d6c6a8; color: #000; }
-        .btn-custom:hover { background-color: #c5b29e; }
-        .list-unstyled li {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 0;
-            border-bottom: 1px solid #ddd;
-        }
-        .input-group { margin-bottom: 20px; }
-        .documento { margin-left: 10px; font-size: 0.9em; color: #555; }
-    </style>
+    
 </head>
 <body>
+@extends('layouts.app')
+
+
+@section('content')
     <div class="container mt-4">
-        <h2 class="text-center text-danger">SEGUIMIENTO DEL COMITÉ</h2>
+        <h2 class="titulo">Seguimiento del comité</h2>
+        <div class="linea-separadora"></div>
         
         @if(session('success'))
             <div class="alert alert-success">{{ session('success') }}</div>
@@ -87,5 +79,6 @@
     </div>
 
     <a href="{{ url('/') }}" class="back-button">Regresar a la pantalla principal</a>
+    @endsection
 </body>
 </html>

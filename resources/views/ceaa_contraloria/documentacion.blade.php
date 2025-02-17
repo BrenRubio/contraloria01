@@ -7,8 +7,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+@extends('layouts.app')
+
+@section('content')
     <div class="container mt-5">
-        <h1 class="text-center text-primary mb-4">Información de Documentación</h1>
+        <h1 class="titulo">Información de documentación</h1>
+        <div class="linea-separadora"></div>
 
         {{-- Formulario para añadir un nuevo documento --}}
         <div class="card mb-4 shadow">
@@ -117,6 +121,8 @@
             <a href="{{ route('welcome') }}" class="btn btn-secondary">Regresar a la pantalla principal</a>
         </div>
     </div>
+
+    @endsection
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

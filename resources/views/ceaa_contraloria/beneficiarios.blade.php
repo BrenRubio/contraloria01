@@ -80,6 +80,9 @@
     </style>
 </head>
 <body>
+@extends('layouts.app')
+
+@section('content')
     <h1>{{ isset($beneficiario) ? 'Editar Beneficiario' : 'Agregar Beneficiario' }}</h1>
     <form action="{{ isset($beneficiario) ? route('beneficiarios.update', $beneficiario->id) : route('beneficiarios.store') }}" method="POST">
         @csrf
@@ -237,6 +240,7 @@
     </form>
 
     <a href="{{ url('/') }}" class="back-button">Regresar a la pantalla principal</a>
+    @endsection
 
     <script>
         function copiarDatos() {

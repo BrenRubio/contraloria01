@@ -188,13 +188,23 @@
                 color: var(--c1_primario);
             }
     
-            .titulo{
-                font-family: 'Montserrat';
+            .titulo {
+                font-family: 'Montserrat', sans-serif;
                 font-weight: 700;
-                font-size: calc(1.4rem + 0.6vw);
+                font-size: clamp(1.2rem, 3.5vw, 2rem);
                 color: var(--c1_primario);
+                text-align: center;
+                margin-bottom: 10px; /* Espacio entre el título y la línea */
             }
-    
+            
+            .linea-separadora {
+                width: 100%; /* En pantallas grandes cubre casi todo el ancho */
+                max-width: 1300px; /* No se expande demasiado en monitores grandes */
+                height: 3px; /* Grosor visible */
+                background-color: var(--c2_secundario);
+                margin: 0 auto 20px auto; /* Centrar y dar separación inferior */
+            }
+            
             .subtitulo {
                 font-family: sans-serif;
                 font-weight: 600;

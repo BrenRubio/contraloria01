@@ -7,8 +7,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+@extends('layouts.app')
+
+@section('content')
     <div class="container mt-5">
-        <h1 class="text-center text-primary mb-4">Buzón de Quejas y Sugerencias</h1>
+        <h1 class="titulo">Buzón de quejas y sugerencias</h1>
+        <div class="linea-separadora"></div>
 
         {{-- Tabla para listar las quejas registradas --}}
         <div class="card shadow">
@@ -120,5 +124,6 @@
             }
         }
     </script>
+    @endsection
 </body>
 </html>

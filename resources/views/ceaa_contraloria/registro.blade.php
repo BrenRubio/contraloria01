@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro de Comités</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -11,117 +13,193 @@
             margin: 0;
             padding: 20px;
         }
+
         h1 {
             text-align: center;
             color: #800000;
         }
+
+        /* TABLA EN ESCRITORIO */
+        .table-container {
+            display: block;
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
             margin: 20px 0;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+
         th, td {
             border: 1px solid #ddd;
             padding: 8px;
             text-align: left;
         }
+
         th {
             background-color: #f4a460;
             color: #333;
         }
+
         tr:nth-child(even) {
             background-color: #f9f9f9;
         }
+
         tr:hover {
             background-color: #f1f1f1;
         }
+
+        /* BOTONES */
         .actions {
             text-align: center;
         }
+
         .btn {
             display: inline-block;
-            padding: 5px 10px;
-            background-color: #ffa500;
+            padding: 6px 12px;
+            background-color: #C4A77D;
             color: white;
             text-decoration: none;
             border-radius: 4px;
+            border: none;
         }
+
         .btn:hover {
-            background-color: #ff8c00;
+            background-color: #a67c52;
         }
-        .back-button {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 15px;
-            background-color: #ffa500;
-            color: white;
-            text-decoration: none;
-            border-radius: 4px;
+
+        /* VISTA MÓVIL */
+        .mobile-cards {
+            display: none; /* OCULTAR EN ESCRITORIO */
         }
-        .back-button:hover {
-            background-color: #ff8c00;
-        }
-        .integrantes {
-            margin-top: 20px; /* Espacio entre el título y la lista */
-        }
-        .integrantes-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px; /* Espacio entre los integrantes */
-        }
-        .integrante {
-            border: 1px solid #ddd;
-            padding: 10px;
-            border-radius: 5px;
-            width: calc(33% - 20px); /* Ajusta el ancho según sea necesario */
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-        }
-        .info {
-            display: flex;
-            flex-direction: column;
+
+        @media (max-width: 768px) {
+            .table-container {
+                display: none; /* OCULTAR TABLA EN MÓVIL */
+            }
+
+            .mobile-cards {
+                display: block; /* MOSTRAR TARJETAS SOLO EN MÓVIL */
+            }
+
+            .card {
+                background: #F8F5F0;
+                border: 1px solid #C4A77D;
+                border-radius: 10px;
+                padding: 10px;
+                margin-bottom: 15px;
+                box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+            }
+
+            .card-header {
+                background: #C4A77D;
+                color: white;
+                font-weight: bold;
+                padding: 12px;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .card-body {
+                padding: 12px;
+            }
+
+            .card-body div {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 5px 0;
+                border-bottom: 1px solid #ddd;
+                font-size: 16px;
+                flex-wrap: wrap;
+            }
+
+            .card-body div:last-child {
+                border-bottom: none;
+            }
+
+            /* BOTONES EN MÓVIL */
+            .actions-container {
+                font-weight: bold;
+                color: #a67c52;
+                margin-bottom: 5px;
+                text-align: left;
+            }
+
+            .actions {
+                display: flex;
+                justify-content: space-between;
+                gap: 10px;
+                margin-top: 10px;
+            }
+
+            .actions button, .actions a {
+                width: 45px;
+                height: 45px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 5px;
+                font-size: 20px;
+                border: none;
+                cursor: pointer;
+                transition: background 0.3s ease-in-out;
+                background: #C4A77D;
+                color: white;
+            }
+
+            .actions button:hover, .actions a:hover {
+                background: #a67c52;
+            }
         }
     </style>
-    <!-- Agregar Bootstrap para el modal -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-    <h1>Registro de Comités</h1>
+@extends('layouts.app')
+
+@section('content')
+    <h1 class="titulo" >Registro de Comités</h1>
+    <div class="linea-separadora"></div>
     <a href="{{ route('beneficiarios.create') }}" class="btn">Agregar Beneficiario</a>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Tipo de Obra</th>
-                <th>Apartado</th>
-                <th>Fecha de Constitución</th>
-                <th>Nombre del Comité</th>
-                <th>Clave del Comité</th>
-                <th>Ubicación</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-            @forelse ($beneficiarios as $beneficiario)
+    <!-- TABLA PARA ESCRITORIO -->
+    <div class="table-container">
+        <table>
+            <thead>
                 <tr>
-                    <td>{{ $beneficiario->tipo_obra }}</td>
-                    <td>{{ $beneficiario->apartado }}</td>
-                    <td>{{ $beneficiario->fecha_constitucion }}</td>
-                    <td>{{ $beneficiario->nombre_comite }}</td>
-                    <td>{{ $beneficiario->clave_comite }}</td>
-                    <td>{{ $beneficiario->entidad_federativa_comite }}, {{ $beneficiario->municipio_comite }}, {{ $beneficiario->localidad_comite }}</td>
-                    <td class="actions">
-                        <button class="btn" data-toggle="modal" data-target="#modalComite{{ $beneficiario->clave_comite }}">Ver</button>
-                        <a href="{{ route('beneficiarios.edit', $beneficiario->id) }}" class="btn">Editar</a>
-                        <form action="{{ route('beneficiarios.destroy', $beneficiario->id) }}" method="POST" style="display:inline;">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn" onclick="return confirm('¿Estás seguro de que deseas eliminar este beneficiario?');">Eliminar</button>
-                        </form>
-                    </td>
+                    <th>Tipo de Obra</th>
+                    <th>Apartado</th>
+                    <th>Fecha de constitución</th>
+                    <th>Nombre del Comité</th>
+                    <th>Clave del Comité</th>
+                    <th>Ubicación</th>
+                    <th>Acciones</th>
                 </tr>
-
-<!-- Modal -->
+            </thead>
+            <tbody>
+                @forelse ($beneficiarios as $beneficiario)
+                    <tr>
+                        <td>{{ $beneficiario->tipo_obra }}</td>
+                        <td>{{ $beneficiario->apartado }}</td>
+                        <td>{{ $beneficiario->fecha_constitucion }}</td>
+                        <td>{{ $beneficiario->nombre_comite }}</td>
+                        <td>{{ $beneficiario->clave_comite }}</td>
+                        <td>{{ $beneficiario->entidad_federativa_comite }}, {{ $beneficiario->municipio_comite }}, {{ $beneficiario->localidad_comite }}</td>
+                        <td class="actions">
+                            <button class="btn" data-toggle="modal" data-target="#modalComite{{ $beneficiario->clave_comite }}">Ver</button>
+                            <a href="{{ route('beneficiarios.edit', $beneficiario->id) }}" class="btn">Editar</a>
+                            <form action="{{ route('beneficiarios.destroy', $beneficiario->id) }}" method="POST" style="display:inline;">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn" onclick="return confirm('¿Estás seguro de que deseas eliminar este beneficiario?');">Eliminar</button>
+                            </form>
+                        </td>
+                    </tr>
+                    <!-- Modal -->
 <div class="modal fade" id="modalComite{{ $beneficiario->clave_comite }}" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
@@ -205,21 +283,51 @@
             </div>
         </div>
     </div>
-</div>
-            @empty
-                <tr>
-                    <td colspan="7" style="text-align: center;">No hay beneficiarios registrados.</td>
-                </tr>
-            @endforelse
-        </tbody>
-    </table>
+                @empty
+                    <tr>
+                        <td colspan="7" style="text-align: center;">No hay beneficiarios registrados.</td>
+                    </tr>
+                
+                @endforelse
+            </tbody>
+        </table>
+    </div>
 
-    <a href="{{ url('/') }}" class="back-button">Regresar a la pantalla principal</a>
-    <a href="{{ url('comites') }}" class="back-button">Registrar nuevo integrante de comité</a>
+    <!-- VISTA MÓVIL - TARJETAS -->
+    <div class="mobile-cards">
+        @forelse ($beneficiarios as $beneficiario)
+            <div class="card">
+                <div class="card-header">
+                    <span><strong>Clave</strong> {{ $beneficiario->clave_comite }}</span>
+                </div>
+                <div class="card-body">
+                    <div><strong>Nombre del Comité</strong> <span>{{ $beneficiario->nombre_comite }}</span></div>
+                    <div><strong>Tipo de Obra</strong> <span>{{ $beneficiario->tipo_obra }}</span></div>
+                    <div><strong>Apartado</strong> <span>{{ $beneficiario->apartado }}</span></div>
+                    <div><strong>Fecha de constitución<</strong> <span>{{ $beneficiario->fecha_constitucion }}</span></div>
+                    <div><strong>Ubicación</strong> <span>{{ $beneficiario->entidad_federativa_comite }}, {{ $beneficiario->municipio_comite }}, {{ $beneficiario->localidad_comite }}</span></div>
+                    <div class="actions-container">Acciones</div>
+                    <div class="actions">
+                        <button class="btn"><i class="fas fa-eye"></i></button>
+                        <a href="#" class="btn"><i class="fas fa-edit"></i></a>
+                        <button class="btn"><i class="fas fa-trash"></i></button>
+                    </div>
+                </div>
+            </div>
+            
+        @empty
+            <p class="text-center">No hay beneficiarios registrados.</p>
+        @endforelse
+    </div>
 
-    <!-- Scripts de Bootstrap -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <a href="{{ url('comites') }}" class="btn">Registrar nuevo integrante de comité</a>
+    @endsection
+
+    
+
+<!-- Scripts de Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

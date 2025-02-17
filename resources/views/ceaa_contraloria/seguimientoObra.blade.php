@@ -8,9 +8,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 </head>
 <body>
+@extends('layouts.app')
+
+
+@section('content')
     <div class="container mt-4">
-        <h3 class="text-center text-uppercase fw-bold text-secondary">Progreso de Obra</h3>
-        <hr class="border-secondary">
+        <h3 class="titulo">Progreso de obra</h3>
+        <div class="linea-separadora"></div>
 
         <!-- Botón de filtro -->
         <div class="d-flex justify-content-end mb-3">
@@ -74,5 +78,6 @@
         </div>
     </div>
     <a href="{{ url('/') }}" class="back-button">Regresar a la pantalla principal</a>
+    @endsection
 </body>
 </html>
