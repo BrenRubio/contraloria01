@@ -6,6 +6,7 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\Exports\\ComitesExport' => $baseDir . '/app/Exports/ComitesExport.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Controllers\\ceaa_contraloria_beneficiarios' => $baseDir . '/app/Http/Controllers/ceaa_contraloria_beneficiarios.php',
     'App\\Http\\Controllers\\ceaa_contraloria_documentacion' => $baseDir . '/app/Http/Controllers/ceaa_contraloria_documentacion.php',

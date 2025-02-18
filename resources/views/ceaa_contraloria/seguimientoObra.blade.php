@@ -50,9 +50,12 @@
     </style>
 </head>
 <body>
+@extends('layouts.app')
+
+@section('content')
     <div class="container mt-4">
-        <h3 class="text-center text-uppercase fw-bold text-secondary">Seguimiento de la Obra por la CEAA</h3>
-        <hr>
+        <h1 class="titulo">Seguimiento de la Obra por la CEAA</h1>
+        <div class="linea-separadora"></div>
         
         <div class="d-flex justify-content-between align-items-center mb-3">
             <h5 class="fw-bold">TR09SDCDEW4</h5>
@@ -82,6 +85,6 @@
 
         <div class="mt-3 p-3 section-title">Seguimiento de Atención Social</div>
     </div>
-    <a href="{{ url('/') }}" class="back-button">Regresar a la pantalla principal</a>
+    @endsection
 </body>
 </html>

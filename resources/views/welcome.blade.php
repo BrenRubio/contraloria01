@@ -5,7 +5,8 @@
 @section('content')
     <div class="container main-content">
         <div class="content">
-            <h1>Comisión Estatal del Agua y Alcantarillado</h1>
+            <h1 class="titulo">Comisión Estatal del Agua y Alcantarillado</h1>
+            <div class="linea-separadora"></div>
             <h2>Contraloría Social</h2>
             <div class="welcome-message">
                 <p>¡Hola!</p>

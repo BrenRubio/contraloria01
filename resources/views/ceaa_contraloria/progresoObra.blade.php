@@ -62,8 +62,12 @@
     </style>
 </head>
 <body>
+@extends('layouts.app')
+
+@section('content')
     <div class="container mt-4">
-        <h3 class="text-center text-uppercase fw-bold text-secondary">Progreso de Obra</h3>
+        <h1 class="titulo">Progreso de Obra</h3>
+        <div class="linea-separadora"></div>
         <hr>
 
         <div class="d-flex justify-content-end mb-3">
@@ -125,6 +129,6 @@
             </div>
         </div>
     </div>
-    <a href="{{ url('/') }}" class="back-button">Regresar a la pantalla principal</a>
+    @endsection
 </body>
 </html>

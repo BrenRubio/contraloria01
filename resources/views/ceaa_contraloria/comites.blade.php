@@ -81,9 +81,13 @@
     </script>
 </head>
 <body>
+@extends('layouts.app')
+
+@section('content')
     <form action="{{ route('comites.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
-        <center><h3>Registro de Integrantes de Comité</h3></center>
+        <h1 class="titulo">Registro de Integrantes de Comité</h1>
+        <div class="linea-separadora"></div>
         <div class="row">
             <div class="col-md-4 form-group">
                 <label for="nombre_usuario">Nombre completo:</label>
@@ -254,5 +258,6 @@
         @endforeach
     </tbody>
 </table>
+@endsection
 </body>
 </html>

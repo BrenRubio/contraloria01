@@ -4,79 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario de Quejas</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f8ff;
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        form {
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 400px;
-        }
-        h3 {
-            text-align: center;
-            color: #333;
-        }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-        input[type="text"], input[type="file"], textarea {
-            width: calc(100% - 16px);
-            padding: 8px;
-            border: 2px solid #ffa500;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-        .error {
-            color: red;
-            font-size: 12px;
-        }
-        input[type="submit"] {
-            background-color: #ffa500;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            width: 100%;
-        }
-        input[type="submit"]:hover {
-            background-color: #ff8c00;
-        }
-        .back-button {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 15px;
-            background-color: #ffa500;
-            color: white;
-            text-decoration: none;
-            border-radius: 4px;
-            text-align: center;
-            width: 92%;
-        }
-        .back-button:hover {
-            background-color: #ff8c00;
-        }
-    </style>
+    
+        
 </head>
 <body>
+@extends('layouts.app')
+
+@section('content')
     <form action="{{ route('buzon-quejas.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
-        <h3>Formulario de Quejas</h3>
+        <h1 class="titulo">Formulario de quejas</h1>
+        <div class="linea-separadora"></div>
 
         <div class="form-group">
             <label for="asunto">Asunto:</label>
@@ -159,5 +97,6 @@
             }
         });
     </script>
+@endsection
 </body>
 </html>

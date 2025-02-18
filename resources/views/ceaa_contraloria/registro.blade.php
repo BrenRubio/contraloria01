@@ -86,8 +86,14 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-    <h1>Registro de Comités</h1>
+@extends('layouts.app')
+
+@section('content')
+    <h1 class="titulo">Registro de Comités</h1>
+    <div class="linea-separadora"></div>
     <a href="{{ route('beneficiarios.create') }}" class="btn">Agregar Beneficiario</a>
+    <a class="btn">Filtrar</a>
+    <a class="btn">Generar reporte</a>
 
     <table>
         <thead>
@@ -216,9 +222,9 @@
         </tbody>
     </table>
 
-    <a href="{{ url('/') }}" class="back-button">Regresar a la pantalla principal</a>
     <a href="{{ url('comites') }}" class="back-button">Registrar nuevo integrante de comité</a>
-
+    
+    @endsection
     <!-- Scripts de Bootstrap -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>

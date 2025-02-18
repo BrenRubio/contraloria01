@@ -44,8 +44,12 @@
     </style>
 </head>
 <body>
+@extends('layouts.app')
+
+@section('content')
     <div class="container mt-4">
-        <h2 class="text-center text-danger">SEGUIMIENTO DEL COMITÉ</h2>
+        <h1 class="titulo">Seguimiento del comité</h1>
+        <div class="linea-separadora"></div>
         
         @if(session('success'))
             <div class="alert alert-success">{{ session('success') }}</div>
@@ -108,7 +112,7 @@
             </div>
         </div>
     </div>
+    @endsection
 
-    <a href="{{ url('/') }}" class="back-button">Regresar a la pantalla principal</a>
 </body>
 </html>
