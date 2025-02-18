@@ -187,6 +187,7 @@
         </div>
         <input type="submit" value="Registrar Usuario" class="btn btn-primary">
         <a href="{{ url('/') }}" class="back-button">Regresar a la pantalla principal</a>
+        <a href="{{ url('beneficiarios') }}" class="back-button">Regresar al Registro de Beneficiarios</a>
     </form>
     
     <div class="separator"></div>

@@ -82,8 +82,6 @@
                 <i class="bi bi-download text-secondary"></i>
             </div>
         </div>
-
-        <div class="mt-3 p-3 section-title">Seguimiento de Atención Social</div>
     </div>
     @endsection
 </body>
